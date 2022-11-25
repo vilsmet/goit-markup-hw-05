@@ -49,16 +49,21 @@
             </ul>
         </div>
     </header>
-
+            <div class="backdrop is-hidden" data-backdrop>
+                <div class="modal">
+                    <svg data-close-modal class="modal-position" width="40" height="40">
+                        <use href="./images/icons.svg#close"></use>
+                    </svg>
+                </div>
+            </div>
     <!--Main Block-->
     <main>
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title">Ефективні рішення для <br /> вашого бізнесу</h1>
-                <button class="button-blue" type="button">Замовити послугу</button>
+                <button data-open-modal class="button-blue" type="button">Замовити послугу</button>
             </div>
         </section>
-
         <!--Main titles-->
         <section class="section">
             <div class="top container">
@@ -375,6 +380,28 @@
             </div>
         </div>
     </footer>
+<script>
+    
+    const refs = {
+        openModalBtn: document.querySelector("[data-open-modal]"),
+        closeModalBtn: document.querySelector("[data-close-modal]"),
+        backdrop: document.querySelector("[data-backdrop]"),
+    };
+    refs.openModalBtn.addEventListener("click", toggleModal);
+    refs.closeModalBtn.addEventListener("click", toggleModal);
+    refs.backdrop.addEventListener("click", logBackdropClick);
+
+    function toggleModal () {
+        refs.backdrop.classList.toggle("is-hidden");
+    }
+
+    function logBackdropClick() {
+        console.log("click to backdrop")
+    }
+</script>
+
+
+<script src="./js/modal.js"></script>
 </body>
 
 </html>
