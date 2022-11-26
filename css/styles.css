@@ -653,10 +653,13 @@ body {
   min-width: 528px;
   min-height: 581px;
   background-color: var(--accent2-color);
-  transition: transform 250ms var(--timing-function);
+  opacity: 1;
+  transition: transform 250ms var(--timing-function),
+  opacity 250ms var(--timing-function);
 }
 .backdrop.is-hidden .modal {
-   transform: translate(-50%, -50%) translate(100%) scale(0%) rotate(720deg);
+   transform: translate(-50%, -50%) translate(100%) scale(200%) rotate(720deg);
+   opacity: 0;
 }
 .modal-close {
   position: absolute;
