@@ -175,22 +175,24 @@ body {
 }
 .link.current::after {
   content: '';
-  display: inline-block;
-
-  border-radius: 2px;
   position: absolute;
-  bottom: 0%;
   left: 50%;
+  bottom: 0%;
   transform: translate(-50%, 0%);
+  display: inline-block;
+  border-radius: 2px;
   width: 108%;
   height: 4px;
   background-color: var(--accent1-color);
-  opacity: 0;
+  /* opacity: 0;
+  transition: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
-.link.current:hover::after,
+/* .link.current:hover::after,
 .link.current:focus::after {
   opacity: 1;
-}
+} */
 .ico {
   /* display: inline-block; */
   background-color: var(--button-color);
@@ -508,7 +510,6 @@ body {
   transition-property: color, background-color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 .button-gray:hover,
 .button-gray:focus {
@@ -645,8 +646,8 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .backdrop.is-hidden {
-  /* visibility: hidden; */
-  opacity: 0;
+  visibility: hidden;
+  /* opacity: 0; */
   pointer-events: none;
 }
 .modal {
